@@ -1,0 +1,32 @@
+<html>
+  <head>
+    <title>Stocks</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js"></script>
+  </head>
+  <body>
+    <div class="ui container">
+      <h1>Stock List</h1>
+      <table class="ui striped table">
+        <thead>
+          <tr>
+            <th>symbol</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for stock in stocks %}
+          <tr>
+            <td>{{stock.symbol}}</td>
+            <td><a href="/stock/{{stock.symbol}}">{{stock.name}}</a></td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>
